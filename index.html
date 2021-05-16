@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+	    const startButton = document.getElementById('start-btn');
+		const questionContainerElement = document.getElementById('question.container')
+
+		//constshuffleQuestion, currentQuestionIndex
+
+		//startButton.addEventListener('click',startGame);
+
+		function startQuiz() {
+			console.log('started')
+			//startButton.classlist.add('hide')
+			//startButton.setAttribute("style", "visibility:hidden");
+			document.getElementById('start-btn').style.visibility = "hidden";
+			document.getElementById('question.container').style.display = "inline";
+			//questionContainerElement.setAttribute("style", "visibility:visible");
+			setNextQuestion()
+		}
+
+		function setNextQuestion() {
+			document.getElementById('question').innerText = 'What is the biggest building in the world?'
+		}
+
+		function selectAnswer() {
+
+		}
+
+		function result()
+		{
+			var score=0;
+			if(document.getElementById('correct1').checked)
+				{	
+					score++;
+				}
+			if(document.getElementById('correct2').checked)
+				{	
+					score++;
+				}
+			if(document.getElementById('correct3').checked)
+				{	
+					score++;
+				}
+
+			document.getElementById('answers').style.display = "inline";
+			document.getElementById('answers').innerText = "Your quiz score is: " + score;"try again"
+			document.getElementById('question.container').style.display = "none";
+			//document.write("Your score is:"+score);
+		 // to print on browser
+		 // to print on screen document.write("Your quiz score is:"+score);
+		 // to print on screen document.write("Try again");
+		}
+	</script>
+	
+    <title>Quiz of Aryan</title>
+	<style>
+			*,*::before,*::after {
+		box-sizing:border-box ;
+		font-family:Gotham-Rounded;
+		}
+
+		:root{
+		--hue-nuetral:200;
+		--hue-wrong:0;
+		--hue-correct:145;
+		}
+
+
+		body{
+		--hue:var(--hue-nuetral);
+		padding:0px;
+		margin:0px;
+		display:flex;
+		width:100vw;
+		height:100vh;
+		justify-content:center;
+		align-items:center;
+		align-content: center;
+		background-color:hsl(var(--hue),100%,20%);
+
+		}
+
+		body.correct{
+		--hue: var (--hue-correct);
+		}
+
+		body.wrong{
+		--hue: var (--hue-wrong);
+		}
+
+		.container{
+		width: 800px;
+		max-width:80%;
+		background-color:rgb(255, 255, 255);
+		border-radius: 5px;
+		padding: 40px;
+		align-content: center !important;
+		box-shadow: 0 0 10px 2px;
+		}
+
+		.btn-grid {
+		 display: grid;
+		 grid-template-columns:repeat(2,auto);
+		 gap:10px;
+		 margin:20px;
+		}
+
+		.btn {
+		--hue: var(--hue-nuetral);
+		border:1px solid hsl(var(--hue), 100%, 20%);
+		background-color:hsl(var(--hue),100%,50%);
+		border-radius: 5px;
+		padding:5px 10px;
+		color: white;
+		outline:none;
+		}
+
+		.btn:hover {
+		 border-color:black;
+		}
+
+		.start-btn, .next-btn {
+
+		font-size: 1.5em;
+		font-weight:bold;
+		padding: 5px 3px;
+		}
+
+		.controls {
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		}
+
+		.hide {
+		display: none;
+		}
+
+		.button{
+		background-color: aquamarine;
+		border: none;
+		color: white;
+		padding:5px 10px;
+		}
+    </style>
+
+</head>
+
+    
+
+<div class="container">
+<div style="position:relative">
+<div>
+ <div id="question.container" style="display:none" >
+    Q1. Which is the tallest building in the world?<br>
+    <input type="radio" name="question1" id="correct1">Burj khalifa<br>
+    <input type="radio" name="question1">Shanghai Tower<br>
+    <input type="radio" name="question1">Taj mahal<br>
+    <input type="radio" name="question1">World One <br>
+    <br>
+    
+    
+    Q2. 1. He proved Copernicus heliocentric theory by using a telescope.<br>
+    <input type="radio" name="question2" > Aristotle<br>
+    <input type="radio" name="question2">Ptolemy<br>
+    <input type="radio" name="question2" id="correct2">Galileo <br>
+    <input type="radio" name="question2">Copernicus <br>
+    <br>
+    
+    
+    Q3. What is 3+2*0?<br>
+    <input type="radio" name="question3" >5 <br>
+    <input type="radio" name="question3" id="correct3">0 <br>
+    <input type="radio" name="question3">18<br>
+    <input type="radio" name="question3">8<br>
+    <br>
+    <br>
+
+    <style>
+
+        .button{
+            background-color: aquamarine;
+            border: none;
+            color: white;
+            padding:5px 10px;
+            }
+        </style>
+
+    <input type="submit" name="submit" value="Submit Quiz" class="start-btn btn"
+    onclick="result()">
+
+   
+</div>
+<div id="answers" style="display:none"></div>
+ 
+<br>
+<div class="controls">
+<br><button id="start-btn" class="start-btn btn" onclick="startQuiz()">Start Aryan's Quiz</button>
+<button id="next-btn" class="next-btn btn hide">next</button>
+
+</div>
+</div>
+
+
+</body>
+</html>
