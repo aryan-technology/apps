@@ -1,73 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    
+
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Components</title>
- 
-<!-- CSS -->   
-    <style>
-    .helpmenu{
-        
-        background-color:purple;
-        
-        color: black;
-    }
-    h1{
-        color: violet;
-    } 
-   </style>
+    <link href="qui.css" rel="stylesheet">
+    <script src="Aryan.js"></script>
+    <title>Quiz of Aryan</title>
 
-<!-- Javascript --> 
-   <script> 
-	function CheckAnswers() { 
-	  var score = 0;
-	  if(document.getElementById("txtPresident").value == 'Abdul kalam')
-	  {
-		score = score + 1;
-	  }
-	  if(document.getElementById("txtStars").value == 50)
-		score = score + 1;
-	  if(document.getElementById("txtPres").value == 'Joe Biden')
-		score = score + 1;
-          alert('your quiz score is : ' + score);
-	} 
-        
-        function ResetAnswers() {
-	  document.getElementById("txtPresident").value = ''
-	  document.getElementById("txtStars").value = ''
-	  document.getElementById("txtPres").value = ''
-	  
-	} 
-
-   </script> 
 </head>
 
-<body>
+    
+
+<div class="container">
+<div style="position:relative">
+<div>
+ <div id="question.container" style="display:none" >
+    Q1. Which is the tallest building in the world?<br>
+    <input type="radio" name="question1" id="correct1">Burj khalifa<br>
+    <input type="radio" name="question1">Shanghai Tower<br>
+    <input type="radio" name="question1">Taj mahal<br>
+    <input type="radio" name="question1">World One <br>
+    <br>
+    
+    
+    Q2. 1. He proved Copernicus heliocentric theory by using a telescope.<br>
+    <input type="radio" name="question2" > Aristotle<br>
+    <input type="radio" name="question2">Ptolemy<br>
+    <input type="radio" name="question2" id="correct2">Galileo <br>
+    <input type="radio" name="question2">Copernicus <br>
+    <br>
+    
+    
+    Q3. What is 3+2*0?<br>
+    <input type="radio" name="question3" >5 <br>
+    <input type="radio" name="question3" id="correct3">0 <br>
+    <input type="radio" name="question3">18<br>
+    <input type="radio" name="question3">8<br>
+    <br>
+    <br>
+
+    <style>
+
+        .button{
+            background-color: aquamarine;
+            border: none;
+            color: white;
+            padding:5px 10px;
+            }
+        </style>
+
+    <input type="submit" name="submit" value="Submit Quiz" class="start-btn btn"
+    onclick="result()">
+
    
-   <h1> Quiz </h1>
-   <div class="helpmenu">
-    <br />
- 	<p> 1. who is the 11th president of india?
-            <input type=text id=txtPresident /> </p>  
-	<br/>
-    	<p> 2.how many stars there in usa flag ?
-            <input type=text id=txtStars /> </p>  
-	<br/> 
-	<p> 3. Who is current president of America?
-            <input type=text id=txtPres /> </p>  
-	<br/> 
-	<p> 
-            <input type=button onclick="CheckAnswers()" id=btnSubmit value="Submit"/> 
-	    <input type=button onclick="ResetAnswers()" id=btnReset value="Reset"/>
-	</p>  
-	<br/> 
-    	 
-   </div>
-
+</div>
+<div id="answers" style="display:none"></div>
  
+<br>
+<div class="controls">
+<br><button id="start-btn" class="start-btn btn" onclick="startQuiz()">Start Aryan's Quiz</button>
+<button id="next-btn" class="next-btn btn hide">next</button>
 
-<h1><i>This is a quiz done by Aryan Maddali. There will be the following questions for 2nd to 8th Standard.
-       Thanks for Participating my quiz</i></h1>
-       
+</div>
+</div>
+
+
+</body>
+</html>
